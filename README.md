@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# ReactJS/Redux-boilerplate   
+   
+- React@16.8
+- Redux
+- Redux thunk
+- AntDesign
+- React-router@5
+- React-app-rewired
+
+
 ## Available Scripts
 
 In the project directory, you can run:
