@@ -1,2 +1,10 @@
-# ReactJS/Redux-boilerplate
-Boilerplate for ReactJS (Redux, Redux thunk, ant Design, react-router-v5) based on Create React App and react-app-rewired
+# ReactJS/Redux-boilerplate   
+   
+- React@16.8
+- Redux
+- Redux thunk
+- AntDesign
+- React-router@5
+- React-app-rewired
+
+fork of Create React App.
