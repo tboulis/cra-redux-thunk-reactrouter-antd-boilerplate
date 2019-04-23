@@ -1,2 +1,2 @@
-# cra-redux-thunk-reactrouter-antd-boilerplate
-Boilerplate for ReactJS (Redux, Redux thunk, ant Design, react-router-v5)
+# ReactJS/Redux-boilerplate
+Boilerplate for ReactJS (Redux, Redux thunk, ant Design, react-router-v5) based on Create React App and react-app-rewired
