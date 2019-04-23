@@ -19,7 +19,7 @@ class Dashboard extends Component {
   }
 
   disableLoading = () => {
-    setTimeout(this.setState({ loading: false }, 2000));
+    setTimeout(this.setState({ loading: false }), 2000);
   }
 
   render() {

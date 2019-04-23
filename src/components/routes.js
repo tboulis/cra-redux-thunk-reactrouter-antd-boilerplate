@@ -9,7 +9,7 @@ import Register from './public-pages/register';
 import Reset from './public-pages/reset';
 
 const isAuthenticated = (props) => {
-  console.log(props);
+  return true;
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => {

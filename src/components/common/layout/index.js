@@ -67,89 +67,95 @@ class LayoutSider extends Component {
     );
 
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-        <Header style={{ padding: '0 20px' }}>
-          <div style={{float: 'left', width: 120, textAlign: 'center', color: '#fff', background: 'grey'}}>Logo</div>
+      <Layout style={{ height: '100vh' }}>
+        <Sider
+          breakpoint='lg'
+          collapsedWidth='0'
+          onBreakpoint={(broken) => { console.log(broken); }}
+          onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+        >
+          <div style={{
+            margin: '6px auto 3px',
+            height: 40,
+            lineHeight: '40px',
+            width: 120,
+            textAlign: 'center',
+            color: '#fff',
+            background: 'grey',
+          }}>Logo</div>
           <Menu
             theme='dark'
-            mode='horizontal'
+            mode='inline'
             defaultSelectedKeys={['1']}
             style={{ lineHeight: '64px', marginRight: 'auto', float: 'left' }}
           >
             <Menu.Item key='1' onClick={this.handleMenuClick}>
-              <Icon theme='filled' type='home' />
-              <span>1</span>
+              <Icon type='home' />
+              <span>menu item 1</span>
             </Menu.Item>
             <Menu.Item key='2' onClick={this.handleMenuClick}>
-              <Icon theme='filled' type='message' />
-              <span>1</span>
+              <Icon type='message' />
+              <span>menu item 2</span>
             </Menu.Item>
             <Menu.Item key='3' onClick={this.handleMenuClick}>
-              <Icon theme='filled' type='user' />
-              <span>1</span>
+              <Icon type='user' />
+              <span>menu item 3</span>
+            </Menu.Item>
+            <Menu.Item key='4' onClick={this.handleMenuClick}>
+              <Icon type='user' />
+              <span>menu item 4</span>
             </Menu.Item>
           </Menu>
-          <div style={{
-            height: 64,
-            width: 100,
-            float: 'right',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-            <Dropdown overlay={notificationsMenu} trigger={['click']} placement='bottomRight'>
-              <Button shape='circle' icon='bell' style={{ cursor: 'pointer' }} />
-            </Dropdown>
-            <Dropdown overlay={userMenu} trigger={['click']}>
-              <Avatar
-                shape='square'
-                size={50}
-                style={{ cursor: 'pointer' }}
-                icon='user'
-              />
-            </Dropdown>
-          </div>
-        </Header>
+        </Sider>
         <Layout>
-          <Sider
-            width={200}
-            style={{ background: '#fff' }}
-            breakpoint='lg'
+          <Header
+            style={{ background: '#fff', padding: 0 }}
           >
             <Menu
-              defaultSelectedKeys={['dashboard']}
-              mode='inline'
+              defaultSelectedKeys={['1']}
+              mode='horizontal'
               onClick={ this.handleSubMenuClick }
-              selectedKeys={[this.state.currentSubmenuItem]}
-              style={{ borderRight: 0 }}
+              style={{ width: 'auto', maxWidth: 330, display: 'inline-block' }}
             >
-              <Menu.Item key='dashboard'>
+              <Menu.Item key='1'>
                 <Icon theme='filled' type='appstore' />
-                <span>dashboard</span>
+                <span>submenu item 1</span>
               </Menu.Item>
               <Menu.Item key='2'>
                 <Icon theme='filled' type='file-text' />
-                <span>2</span>
-              </Menu.Item>
-              <Menu.Item key='3'>
-                <Icon theme='filled' type='edit' />
-                <span>3</span>
-              </Menu.Item>
-              <Menu.Item key='4'>
-                <Icon theme='filled' type='mail' />
-                <span>4</span>
+                <span>submenu item 2</span>
               </Menu.Item>
             </Menu>
-          </Sider>
-          <Layout style={{ padding: '24px' }}>
-            <Content>
+            <div style={{
+              height: 64,
+              width: 100,
+              float: 'right',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+            }}>
+              <Dropdown overlay={notificationsMenu} trigger={['click']} placement='bottomRight'>
+                <Button shape='circle' icon='bell' style={{ cursor: 'pointer' }} />
+              </Dropdown>
+              <Dropdown overlay={userMenu} trigger={['click']}>
+                <Avatar
+                  shape='square'
+                  size={50}
+                  style={{ cursor: 'pointer' }}
+                  icon='user'
+                />
+              </Dropdown>
+            </div>
+          </Header>
+          <Content style={{ margin: '24px 16px 0' }}>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               { this.props.children }
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>
-              ReactJS/Redux Boilerplate © { new Date().getFullYear()}
-            </Footer>
-          </Layout>
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            ReactJS/Redux Boilerplate © { new Date().getFullYear()}
+          </Footer>
         </Layout>
       </Layout>
     );
