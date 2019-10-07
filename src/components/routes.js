@@ -35,7 +35,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 const Routes = () => {
   return (
     <Switch>
-      <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+      <PrivateRoute exact path='/' component={ Dashboard } />
       <Route path='/login' component={ Login } />
       <Route path='/register' component={ Register } />
       <Route path='/reset' component={ Reset } />
